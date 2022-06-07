@@ -1,0 +1,17 @@
+name: Publish Apollo Subgraph
+
+inputs:
+  graph-ref:
+    required: true
+  routing-url:
+    required: true
+  schema-path-or-url:
+    required: true
+  subgraph-name:
+    required: true
+
+runs:
+  using: "composite"
+  steps:
+    - run: rover subgraph publish "${{inputs.graph-ref}}" --routing-url "${{inputs.routing-url}}" --schema "${{schema_path_or_url}}" --name ${{inputs.subgraph-name}}
+      shell: bash
