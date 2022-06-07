@@ -13,5 +13,5 @@ inputs:
 runs:
   using: "composite"
   steps:
-    - run: rover subgraph publish "${{inputs.graph-ref}}" --routing-url "${{inputs.routing-url}}" --schema "${{schema_path_or_url}}" --name ${{inputs.subgraph-name}}
+    - run: rover subgraph publish "${{inputs.graph-ref}}" --routing-url "${{inputs.routing-url}}" --schema "${{secrets.schema-path-or-url}}" --name ${{inputs.subgraph-name}}
       shell: bash
